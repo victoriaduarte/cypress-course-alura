@@ -22,9 +22,21 @@ or
 - Run Cypress (headless mode): `npx cypress run`
 
 **Tests**
-- Create tests (<*test-name*>.cy.js) under `cypress\e2e` folder
+- Create tests (<*test-name*>.cy.js) under `cypress/e2e` folder
 - Basic Commands:
     - cy.visit('<*url*>')
     - cy.get('[<*element-locator*>]').click();
     - cy.get('[<*element-locator*>]').type();
     -  cy.contains('<*text*>').should('be.visible');
+
+- Custom commands to code reusability: `cypress/support/commands.js`
+
+**Report**
+- Videos (`cypress/videos`)
+- Report (`mochawesome-report/mochawesome.html or .json`)
+    - Report configurations in `cypress.config.js`
+
+**Test data**
+- `cypress/fixtures/users.json`
+- In test file: `const users = require('../fixtures/users.json')`
+- `users.forEach(user => {...}` where arguments = `user.parameter`
